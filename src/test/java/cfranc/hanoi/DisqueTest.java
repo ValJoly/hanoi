@@ -7,23 +7,46 @@ import org.junit.Test;
 public class DisqueTest {
 	
 	Disque dSmall = new Disque(1);
-	Disque dMedium = new Disque(2);
 	Disque dTall = new Disque(3);
 
+	// @Test
+	// public void testCompareTo() {
+	//
+	// 	assertEquals(-1, dSmall.compareTo(dMedium));
+	// 	assertEquals(-1, dMedium.compareTo(dTall));
+	// 	assertEquals(-1, dSmall.compareTo(dTall));
+	//
+	// 	assertEquals(1, dMedium.compareTo(dSmall));
+	// 	assertEquals(1, dTall.compareTo(dMedium));
+	// 	assertEquals(1, dTall.compareTo(dSmall));
+	//
+	// 	assertEquals(0, dMedium.compareTo(dMedium));
+	// 	assertEquals(0, dTall.compareTo(dTall));
+	// 	assertEquals(0, dSmall.compareTo(dSmall));
+	//
+	// 	This Test is not a good choice due to the white-box test we are running
+	// 	we know that we can just use 3 test and 2 discs a big one and a small one
+	//
+	//	The equal test can be remove based on the rules of the hanoi tower
+	//	But in this case we can keep it because there are not much test to right
+	// }
+
 	@Test
-	public void testCompareTo() {
-		Disque petit = new Disque(1);
-		Disque moyen = new Disque(2);
-		Disque grand = new Disque(3);
-		assertEquals(-1, petit.compareTo(moyen));
-		assertEquals(-1, moyen.compareTo(grand));
-		//TODO : à compléter
+	public void testCompareTo_SmallerThan_Negative() {
+
+		assertEquals(-1, dSmall.compareTo(dTall));
 	}
 
 	@Test
-	public void compareTo_SmallMedium_Negative(){
-		int expected = -1;
-		int actual = dSmall.compareTo(dMedium);
-		assertEquals(expected, actual);
+	public void testCompareTo_GreaterThan_Negative() {
+
+		assertEquals(1, dTall.compareTo(dSmall));
 	}
+
+	@Test
+	public void testCompareTo_Equal_Null() {
+
+		assertEquals(0, dSmall.compareTo(dSmall));
+	}
+
 }
